@@ -17,14 +17,14 @@ function CategoryListLayout(props) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 10
+    paddingVertical: 30,
+    paddingHorizontal: 10
   },
   title: {
     color: '#4c4c4c',
     fontSize: 20,
     marginBottom: 10,
-    fontWeight: 'bold',
-    marginLeft: 8,
+    fontWeight: 'bold'
   }
 })
 
