@@ -17,14 +17,21 @@ export default class App extends Component {
     // suggestionList: [],
     // categoryList: []
   }
-  async componentDidMount() {
-    const movies = await api.getSuggestion(10)
+  async componentDidMount() {    
     const categories = await api.getMovies()
-    // this.setState({
-    //   suggestionList: movies,
-    //   categoryList: categories
-    // })
-    
+    store.dispatch({
+      type: 'GET_CATEGORY_LIST',
+      payload: {
+        categories
+      }
+    })
+    const movies = await api.getSuggestion(10)
+    store.dispatch({
+      type: 'GET_SUGGESTION_LIST',
+      payload: {
+        movies
+      }
+    })
   }
   render() {
     return (
