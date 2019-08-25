@@ -14,16 +14,17 @@ import api from './utils/api';
 
 export default class App extends Component {
   state = {
-    suggestionList: [],
-    categoryList: []
+    // suggestionList: [],
+    // categoryList: []
   }
   async componentDidMount() {
     const movies = await api.getSuggestion(10)
     const categories = await api.getMovies()
-    this.setState({
-      suggestionList: movies,
-      categoryList: categories
-    })
+    // this.setState({
+    //   suggestionList: movies,
+    //   categoryList: categories
+    // })
+    
   }
   render() {
     return (
@@ -32,8 +33,8 @@ export default class App extends Component {
           <Header />
           <Player />
           <Text>Buscador</Text>
-          <CategoryList list={this.state.categoryList} />
-          <SuggestionList list={this.state.suggestionList} />
+          <CategoryList />
+          <SuggestionList />
           <Text>Main</Text>
           <Text>Footer</Text>
         </Home>

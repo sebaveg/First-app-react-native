@@ -33,7 +33,7 @@ class CategoryList extends Component {
 }
 
 const mapStateToProps = state => {
-  debugger
+  return {}
 }
 
 export default connect(mapStateToProps)(CategoryList)
