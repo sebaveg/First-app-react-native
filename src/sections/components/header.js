@@ -11,7 +11,7 @@ function Header(props) {
             style={styles.logo}
           />
           <Text style={styles.title}>
-            Geounity!
+            Peliculas!
           </Text>
         </View>
       </SafeAreaView>
