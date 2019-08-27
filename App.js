@@ -4,7 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import AppLayout from './src/app'
 
 import { Provider } from 'react-redux'
-import store from './store'
+import { PersistGate } from 'redux-persist/integration/react' 
+import { store, persistor } from './store'
 
 export default class App extends Component {
   
@@ -12,7 +13,12 @@ export default class App extends Component {
     console.log(this.getData)
     return (
       <Provider store={store} >
-        <AppLayout />
+        <PersistGate
+          loading={<Text>cargando...</Text>}
+          persistor={persistor}
+        >
+          <AppLayout />
+        </PersistGate>
       </Provider>
     );
   }
